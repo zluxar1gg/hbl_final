@@ -18,14 +18,29 @@ export const About: React.FC<AboutProps> = ({ language }) => {
 
   return (
     <section className="py-20 bg-cream">
-      <div className="container mx-auto px-6 md:px-0">
-        <div className="bg-white rounded-[30px] p-8 lg:p-16 shadow-sm border border-gray-100 max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tight">
-                {t.title}
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
-                {renderText(t.text)}
-            </p>
+      <div className="container mx-auto px-6 xl:px-0">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image Column */}
+            <div className="flex justify-center lg:justify-end order-last lg:order-first">
+                <img 
+                  src="https://i.ibb.co/Yq39d9G/happyboxdelivery.png" 
+                  alt="Happy Box Delivery" 
+                  className="w-full max-w-[600px] object-contain drop-shadow-2xl"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1586810724476-c294fb7ac01b?auto=format&fit=crop&w=800&q=80";
+                  }}
+                />
+            </div>
+
+            {/* Text Column */}
+            <div className="text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tight">
+                    {t.title}
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+                    {renderText(t.text)}
+                </p>
+            </div>
         </div>
       </div>
     </section>

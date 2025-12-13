@@ -1,23 +1,20 @@
-export enum Tab {
-  CHAT = 'CHAT',
-  VISION = 'VISION',
-  IMAGE_GEN = 'IMAGE_GEN'
-}
 
-export interface Message {
+export type ParcelStatus = 'registered' | 'warehouse' | 'shipped' | 'customs' | 'delivered';
+
+export interface Parcel {
   id: string;
-  role: 'user' | 'model';
-  content: string;
-  timestamp: number;
-  isError?: boolean;
+  trackingNumber: string; // Domestic tracking (China)
+  description: string;
+  status: ParcelStatus;
+  weight?: number;
+  price?: number;
+  imageUrl?: string;
+  internationalTracking?: string; // International tracking (if shipped)
+  dateAdded: string;
 }
 
-export interface VisionResult {
-  text: string;
-  analyzedImage?: string; // base64
-}
-
-export interface GeneratedImage {
-  url: string;
-  prompt: string;
+export interface User {
+  email: string;
+  name: string;
+  clientCode: string; // e.g. HB-1024
 }

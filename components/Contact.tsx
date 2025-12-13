@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Language, translations } from '../utils/translations';
-import { Send, MessageCircle, Copy, Check } from 'lucide-react';
+import { Send, Copy, Check, Mail } from 'lucide-react';
 
 interface ContactProps {
   language: Language;
@@ -10,6 +10,11 @@ interface ContactProps {
 export const Contact: React.FC<ContactProps> = ({ language }) => {
   const t = translations[language].contact;
   const [copied, setCopied] = useState(false);
+
+  // Email obfuscation parts
+  const emailUser = 'support';
+  const emailDomain = 'happyboxlogistics.com';
+  const fullEmail = `${emailUser}@${emailDomain}`;
 
   const handleCopyWeChat = () => {
     navigator.clipboard.writeText('HappyBoxLogistics');
@@ -33,7 +38,7 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
             <h3 className="text-3xl md:text-4xl font-bold mb-10 text-brand-dark tracking-tight">{t.contactUs}</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto mt-4">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto mt-4 mb-12">
             {/* Telegram */}
             <div className="flex flex-col items-center group">
               <div className="aspect-square w-full max-w-[300px] rounded-[30px] overflow-hidden shadow-sm bg-white mb-6 border-2 border-transparent group-hover:border-brand-blue/20 transition-all">
@@ -85,18 +90,24 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
             </div>
           </div>
 
-          {/* Mascot Image Integrated */}
-          <div className="mt-20">
-             <img 
-              src="https://i.ibb.co/6JsZY6jZ/happyboxbottom.png" 
-              alt="Happy Box Mascot" 
-              className="max-w-[200px] w-full h-auto mx-auto opacity-90 hover:scale-105 transition-transform duration-500"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=800&q=80";
-                e.currentTarget.onerror = null;
-              }}
-            />
+          {/* Email Block */}
+          <div className="max-w-4xl mx-auto bg-gray-50 rounded-[25px] p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100 hover:border-brand-blue/30 transition-colors">
+            <div className="flex items-center gap-5">
+                <div className="hidden md:flex w-16 h-16 bg-white rounded-full items-center justify-center text-brand-blue shadow-sm">
+                    <Mail size={32} />
+                </div>
+                <div className="text-left">
+                    <h4 className="text-2xl font-bold text-brand-dark">Email</h4>
+                    {/* Rendered via JS to prevent simple scraping - font size reduced on mobile to prevent ugly breaking */}
+                    <p className="text-gray-500 font-medium text-sm sm:text-base">{fullEmail}</p>
+                </div>
+            </div>
+            <a 
+                href={`mailto:${fullEmail}`}
+                className="bg-white text-brand-dark border-2 border-gray-200 px-8 py-3 rounded-xl font-bold hover:border-brand-blue hover:text-brand-blue transition-all active:scale-95 w-full md:w-auto"
+            >
+                {language === 'en' ? 'Send Email' : 'Написать письмо'}
+            </a>
           </div>
         </div>
       </div>

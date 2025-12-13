@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Mail } from 'lucide-react';
 import { Language, translations } from '../utils/translations';
 
 // Social Media Icons Components
@@ -54,6 +54,11 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
   const t = translations[language].footer;
 
+  // Email obfuscation
+  const emailUser = 'support';
+  const emailDomain = 'happyboxlogistics.com';
+  const fullEmail = `${emailUser}@${emailDomain}`;
+
   // Prevent background scrolling when modal is open
   useEffect(() => {
     if (activeModal) {
@@ -84,51 +89,88 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
 
   return (
     <>
-      <footer className="bg-brand-light pt-16 pb-8">
-        <div className="container mx-auto">
-          {/* Modified layout: removed justify-between, added gap for proximity */}
-          <div className="flex flex-col md:flex-row gap-12 md:gap-24 mb-12 px-6 md:px-0 items-start">
+      <footer className="bg-brand-light pt-16 pb-8 overflow-hidden relative">
+        <div className="container mx-auto relative z-10">
+          {/* Main Footer Content */}
+          <div className="flex flex-col md:flex-row gap-12 md:gap-20 mb-12 px-6 md:px-0 items-start">
+            
+            {/* Left Column: Brand & Socials */}
             <div className="space-y-6">
               <div className="text-4xl font-black text-brand-blue tracking-tighter">
                 HappyBox
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 ml-2">
                 <SocialLink href="https://instagram.com/happybox_dan" icon={InstagramIcon} label="Instagram" />
                 <SocialLink href="https://t.me/happyboxlogistics" icon={TelegramIcon} label="Telegram" />
                 <SocialLink href="https://wa.me/79140987337" icon={WhatsAppIcon} label="WhatsApp" />
                 <SocialLink href="https://www.facebook.com/HappyBoxLogistics" icon={FacebookIcon} label="Facebook" />
+                
+                {/* Mail Icon added to row, VISIBLE ON MOBILE AGAIN */}
+                <a 
+                    href={`mailto:${fullEmail}`}
+                    className="flex w-11 h-11 bg-white rounded-full items-center justify-center text-brand-dark hover:bg-brand-blue hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-1"
+                    aria-label="Email Support"
+                >
+                    <Mail className="w-5 h-5" />
+                </a>
               </div>
             </div>
             
-            <div className="text-left">
-              <h3 className="font-bold text-lg mb-5 text-black">{t.support}</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#contacts" onClick={(e) => handleScroll(e, 'contacts')} className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium">
-                    {t.contact}
-                  </a>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => setActiveModal('privacy')}
-                    className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium"
-                  >
-                    {t.privacy}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => setActiveModal('terms')}
-                    className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium"
-                  >
-                    {t.terms}
-                  </button>
-                </li>
-              </ul>
+            {/* Center Column: Links and Mobile Image */}
+            <div className="flex flex-row justify-between items-end w-full md:w-auto md:block">
+                <div className="text-left relative z-10">
+                    <h3 className="font-bold text-lg mb-5 text-black">{t.support}</h3>
+                    <ul className="space-y-3">
+                        <li>
+                        <a href="#contacts" onClick={(e) => handleScroll(e, 'contacts')} className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium text-base">
+                            {t.contact}
+                        </a>
+                        </li>
+                        <li>
+                        <button 
+                            onClick={() => setActiveModal('privacy')}
+                            className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium text-base"
+                        >
+                            {t.privacy}
+                        </button>
+                        </li>
+                        <li>
+                        <button 
+                            onClick={() => setActiveModal('terms')}
+                            className="text-gray-800 hover:text-brand-blue transition-colors cursor-pointer font-medium text-base"
+                        >
+                            {t.terms}
+                        </button>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Mobile/Tablet Mascot - Visible only on LG hidden, next to links */}
+                <div className="block lg:hidden -mb-4 -mr-4">
+                    <img 
+                        src="https://i.ibb.co/8gjY6zKw/happyboxbottom-r.png" 
+                        alt="Happy Box Mascot" 
+                        className="w-[150px] h-auto object-contain drop-shadow-lg"
+                        referrerPolicy="no-referrer"
+                    />
+                </div>
+            </div>
+
+            {/* Right Column: Desktop Mascot */}
+            <div className="hidden lg:block ml-auto self-end mr-10 -mb-8">
+                 <img 
+                    src="https://i.ibb.co/8gjY6zKw/happyboxbottom-r.png" 
+                    alt="Happy Box Mascot" 
+                    className="w-[250px] h-auto object-contain drop-shadow-xl"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                    }}
+                 />
             </div>
           </div>
           
-          <div className="border-t border-brand-blue/10 pt-8 text-center text-gray-600 text-sm font-medium">
+          <div className="pt-8 text-center text-gray-600 text-sm font-medium relative z-10">
             © {new Date().getFullYear()} {t.rights}
           </div>
         </div>
