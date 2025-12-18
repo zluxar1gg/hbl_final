@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { X, Mail } from 'lucide-react';
 import { Language, translations } from '../utils/translations';
@@ -102,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
               <div className="flex gap-4 ml-2">
                 <SocialLink href="https://instagram.com/happybox_dan" icon={InstagramIcon} label="Instagram" />
                 <SocialLink href="https://t.me/happyboxlogistics" icon={TelegramIcon} label="Telegram" />
-                <SocialLink href="https://wa.me/79140987337" icon={WhatsAppIcon} label="WhatsApp" />
+                <SocialLink href="https://wa.me/8613048875834" icon={WhatsAppIcon} label="WhatsApp" />
                 <SocialLink href="https://www.facebook.com/HappyBoxLogistics" icon={FacebookIcon} label="Facebook" />
                 
                 {/* Mail Icon added to row, VISIBLE ON MOBILE AGAIN */}
