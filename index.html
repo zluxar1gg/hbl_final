@@ -1,35 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Primary Meta Tags -->
+    <!-- Critical CSS Variables & Base Styles -->
+    <style>
+      :root {
+        --color-cream: #f5f5f0;
+        --color-brand-blue: #2397d0;
+        --color-brand-light: #cde4f5;
+        --color-brand-yellow: #fff176;
+        --color-brand-dark: #1a1a1a;
+      }
+
+      /* Immediate background and font setup */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-cream);
+        color: var(--color-brand-dark);
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        /* Prevent scroll jump on load */
+        min-height: 100vh;
+      }
+
+      /* Critical Skeleton for Header */
+      #root:empty::before {
+        content: "";
+        display: block;
+        height: 80px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        backdrop-blur: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+      }
+
+      /* Critical Animation */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://i.ibb.co" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://i.ibb.co/23T2k8rr/happyboxtop.png" as="image" fetchpriority="high" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Meta Tags -->
     <title>HappyBox - Shipping Agent & Forwarder | Delivery from China & Hong Kong</title>
     <meta name="title" content="HappyBox - Shipping Agent & Forwarder | Delivery from China & Hong Kong" />
-    <meta name="description" content="Expert China shipping agent for small packages & FBA cargo. We offer free warehousing, consolidation, photo inspection, and DDP delivery (taxes included). Direct shipping from China/Hong Kong to USA (Amazon FBA), UK, EU, UAE, Canada, Australia." />
+    <meta name="description" content="Expert China shipping agent. Free warehousing, consolidation, photo inspection, and DDP delivery. Direct shipping to USA, UK, EU, UAE." />
     
-    <!-- Keywords -->
-    <meta name="keywords" content="China shopping agent, Taobao agent, freight forwarder China, shipping from Hong Kong, package consolidation, buy from China, door to door shipping, HappyBox, Delivery from China to USA, Delivery from China to UK, Delivery from China to Germany, Delivery from China to France, Delivery from China to Spain, Delivery from China to Italy, Delivery from China to Netherlands, Delivery from China to Poland, Delivery from China to UAE, Delivery from China to Canada, Delivery from China to Australia, Shipping from Hong Kong to USA, Shipping from Hong Kong to UK, Shipping from Hong Kong to Europe, Small package delivery from China to USA, Small package delivery from China to Europe, Small package delivery from China to UK, Amazon FBA freight forwarder China, Ship from China to Amazon FBA USA, Amazon FBA prep service China, DDP shipping to Amazon" />
-    
-    <meta name="author" content="HappyBox" />
-    <meta name="robots" content="index, follow" />
-
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://happybox.service/" />
-    <meta property="og:title" content="HappyBox - Shipping Agent & Forwarder | Delivery from China & Hong Kong" />
-    <meta property="og:description" content="We store and consolidate your orders for free. Door-to-door delivery to USA, EU, UK, UAE. Taxes and customs duties included in the price." />
+    <meta property="og:title" content="HappyBox - Shipping Agent & Forwarder" />
     <meta property="og:image" content="https://i.ibb.co/23T2k8rr/happyboxtop.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/629m3RB/favicon.png" />
-    <link rel="apple-touch-icon" href="https://i.ibb.co/629m3RB/favicon.png" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,22 +90,13 @@
               }
             },
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             },
             container: {
               center: true,
               padding: '1.5rem',
               screens: {
                 xl: '1200px'
-              }
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-out forwards',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           },

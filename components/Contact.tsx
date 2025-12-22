@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Language, translations } from '../utils/translations';
 import { Send, Copy, Check, Mail } from 'lucide-react';
@@ -51,6 +52,9 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
                 <img 
                   src="https://i.ibb.co/KpGd8jJ3/happybox-telegram.jpg" 
                   alt="Telegram QR Code" 
+                  width="300"
+                  height="300"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
@@ -73,6 +77,9 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
                 <img 
                   src="https://i.ibb.co/JRJHgSkC/happybox-wa.png" 
                   alt="WhatsApp QR Code" 
+                  width="300"
+                  height="300"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
@@ -95,6 +102,9 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
                 <img 
                   src="https://i.ibb.co/93pK51G9/happybox-wechat.jpg" 
                   alt="WeChat QR Code" 
+                  width="300"
+                  height="300"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />

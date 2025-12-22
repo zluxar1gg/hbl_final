@@ -25,6 +25,9 @@ export const About: React.FC<AboutProps> = ({ language }) => {
                 <img 
                   src="https://i.ibb.co/Yq39d9G/happyboxdelivery.png" 
                   alt="Happy Box Delivery" 
+                  width="800"
+                  height="800"
+                  loading="lazy"
                   className="w-full max-w-[600px] object-contain drop-shadow-2xl"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1586810724476-c294fb7ac01b?auto=format&fit=crop&w=800&q=80";

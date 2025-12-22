@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { X, Mail } from 'lucide-react';
 import { Language, translations } from '../utils/translations';
@@ -149,6 +150,9 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
                     <img 
                         src="https://i.ibb.co/8gjY6zKw/happyboxbottom-r.png" 
                         alt="Happy Box Mascot" 
+                        width="300"
+                        height="300"
+                        loading="lazy"
                         className="w-[150px] h-auto object-contain drop-shadow-lg"
                         referrerPolicy="no-referrer"
                     />
@@ -160,6 +164,9 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
                  <img 
                     src="https://i.ibb.co/8gjY6zKw/happyboxbottom-r.png" 
                     alt="Happy Box Mascot" 
+                    width="300"
+                    height="300"
+                    loading="lazy"
                     className="w-[250px] h-auto object-contain drop-shadow-xl"
                     referrerPolicy="no-referrer"
                     onError={(e) => {

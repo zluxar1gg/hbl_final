@@ -116,6 +116,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
                 <img 
                   src="https://i.ibb.co/23T2k8rr/happyboxtop.png" 
                   alt="Happy Box Services" 
+                  width="800"
+                  height="800"
+                  fetchpriority="high"
                   className="w-full max-w-[600px] h-auto object-contain"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1586810724476-c294fb7ac01b?auto=format&fit=crop&w=800&q=80";
@@ -150,6 +153,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
             <img 
               src="https://i.ibb.co/23T2k8rr/happyboxtop.png" 
               alt="Happy Box Services" 
+              width="800"
+              height="800"
+              fetchpriority="high"
               className="w-full max-w-[600px] h-auto object-contain"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1586810724476-c294fb7ac01b?auto=format&fit=crop&w=800&q=80";

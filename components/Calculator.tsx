@@ -239,6 +239,9 @@ export const Calculator: React.FC<CalculatorProps> = ({ language }) => {
                    <img 
                     src="https://i.ibb.co/YTffLPLR/happyboxcalc.png" 
                     alt="Calculator Visual" 
+                    width="1000"
+                    height="1000"
+                    loading="lazy"
                     className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
                       e.currentTarget.src = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80";

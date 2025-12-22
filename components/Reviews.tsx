@@ -24,7 +24,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   // We only set isReady to false on the very first mount or if the image isn't loaded yet.
-  // We avoid resetting it to false when the 'review.image' changes to prevent the "blink" flicker.
   useEffect(() => {
     if (imgRef.current?.complete) {
       setIsReady(true);
@@ -39,11 +38,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
       <div className={`rounded-3xl overflow-hidden shadow-md border-4 border-gray-50 flex-shrink-0 relative bg-gray-100 ${
         compact ? 'w-[80px] h-[80px] mb-2' : 'w-[120px] h-[120px] mb-4'
       }`}>
-          {/* 
-            Loading Background: 
-            Instead of a separate absolute div that blinks, 
-            we use a CSS pulse on the container itself if not ready.
-          */}
           {!isReady && (
             <div className="absolute inset-0 bg-gray-200 animate-pulse z-0" />
           )}
@@ -52,7 +46,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
               ref={imgRef}
               src={review.image} 
               alt={review.name}
-              loading="eager" 
+              width="240"
+              height="240"
+              loading="lazy"
               decoding="async"
               onLoad={() => setIsReady(true)}
               className={`relative z-10 w-full h-full object-cover transition-opacity duration-300 ${
@@ -134,11 +130,6 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
         {/* --- DESKTOP VIEW --- */}
         <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-16 relative">
           <div className="grid grid-cols-3 gap-6 lg:gap-8">
-            {/* 
-                CRITICAL FIX: Use stable keys (idx) instead of (page-idx).
-                This ensures the ReviewCard component persists during page turns,
-                allowing the browser to swap the image source without unmounting the whole card.
-            */}
             {testimonialPages[desktopPage].map((review, idx) => (
               <ReviewCard key={idx} review={review} />
             ))}
@@ -156,7 +147,6 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
 
         {/* --- MOBILE VIEW --- */}
         <div className="md:hidden bg-brand-light rounded-[30px] p-4 relative">
-          {/* Key=0 ensures the card stays mounted even if index changes */}
           <ReviewCard key="mobile" review={allTestimonials[mobileIndex]} compact={true} />
           <div className="flex justify-center gap-6 mt-4">
             <button onClick={prevMobile} className="w-10 h-10 rounded-full bg-white text-brand-blue shadow-md flex items-center justify-center active:scale-95">
