@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Language, translations } from '../utils/translations';
 
@@ -211,7 +210,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language }) => {
                                         <button onClick={handleScrollToContact} className="underline hover:text-white mt-1">{t.altContact}</button>
                                     </p>
                                 </div>
-                            </>
+                            </div>
                         </>
                     )}
                     <button 
