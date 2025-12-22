@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Language, translations } from '../utils/translations';
@@ -30,7 +29,7 @@ export const SeoBlock: React.FC<SeoBlockProps> = ({ language }) => {
         <div className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${isOpen ? 'max-h-[1000px] mt-8' : 'max-h-0'}`}>
           <div className="grid md:grid-cols-3 gap-10 text-sm pb-4">
             <div>
-              <h4 className="font-bold text-brand-dark mb-4 text-base">{t.categories.destinations.title}</h4>
+              <h3 className="font-bold text-brand-dark mb-4 text-base">{t.categories.destinations.title}</h3>
               <ul className="space-y-2">
                 {t.categories.destinations.items.map((item, idx) => (
                   <li key={idx} className="text-gray-500 hover:text-brand-blue cursor-default transition-colors">{item}</li>
@@ -38,7 +37,7 @@ export const SeoBlock: React.FC<SeoBlockProps> = ({ language }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-brand-dark mb-4 text-base">{t.categories.services.title}</h4>
+              <h3 className="font-bold text-brand-dark mb-4 text-base">{t.categories.services.title}</h3>
               <ul className="space-y-2">
                 {t.categories.services.items.map((item, idx) => (
                   <li key={idx} className="text-gray-500 hover:text-brand-blue cursor-default transition-colors">{item}</li>
@@ -46,7 +45,7 @@ export const SeoBlock: React.FC<SeoBlockProps> = ({ language }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-brand-dark mb-4 text-base">{t.categories.platforms.title}</h4>
+              <h3 className="font-bold text-brand-dark mb-4 text-base">{t.categories.platforms.title}</h3>
               <ul className="space-y-2">
                 {t.categories.platforms.items.map((item, idx) => (
                   <li key={idx} className="text-gray-500 hover:text-brand-blue cursor-default transition-colors">{item}</li>
