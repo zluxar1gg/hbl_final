@@ -22,7 +22,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
             onClick={() => setIsServicesOpen(!isServicesOpen)}
             aria-expanded={isServicesOpen}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-dark tracking-tight">{t.title}</h2>
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-dark tracking-tight">{t.title}</h3>
             <div className={`w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-blue transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}>
               <ChevronDown size={28} strokeWidth={2.5} />
             </div>
@@ -55,7 +55,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
             onClick={() => setIsAmazonOpen(!isAmazonOpen)}
             aria-expanded={isAmazonOpen}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-dark tracking-tight">{t.amazonTitle}</h2>
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-dark tracking-tight">{t.amazonTitle}</h3>
             <div className={`w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-blue transition-transform duration-300 ${isAmazonOpen ? 'rotate-180' : ''}`}>
               <ChevronDown size={28} strokeWidth={2.5} />
             </div>
@@ -85,7 +85,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
 
 const ServiceItem = ({ title, text }: { title: string; text: string }) => (
   <div className="mb-10 last:mb-0">
-    <h3 className="font-bold text-brand-dark text-xl mb-3">{title}</h3>
+    <h4 className="font-bold text-brand-dark text-xl mb-3">{title}</h4>
     <p className="text-gray-600 leading-relaxed text-base font-medium">{text}</p>
   </div>
 );
