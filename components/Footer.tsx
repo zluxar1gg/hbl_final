@@ -41,7 +41,11 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon: Icon, label, platfo
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    onClick={() => platform && platform !== 'instagram' && platform !== 'facebook' ? trackLead(platform as any, 'footer') : null}
+    onClick={() => {
+        if (platform && (platform === 'telegram' || platform === 'whatsapp')) {
+            trackLead(platform, 'footer', 'click');
+        }
+    }}
     className="w-11 h-11 bg-white rounded-full flex items-center justify-center text-brand-dark hover:bg-brand-blue hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-1"
     aria-label={label}
   >
@@ -110,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
                 
                 <a 
                     href={`mailto:${fullEmail}`}
-                    onClick={() => trackLead('email', 'footer')}
+                    onClick={() => trackLead('email', 'footer', 'click')}
                     className="flex w-11 h-11 bg-white rounded-full items-center justify-center text-brand-dark hover:bg-brand-blue hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-1"
                     aria-label={language === 'en' ? 'Email Support' : 'Написать в поддержку'}
                 >
