@@ -19,14 +19,15 @@ export const Analytics: React.FC = () => {
         script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
         document.head.appendChild(script);
 
-        // Config script
+        // Config script with debug_mode enabled
         const configScript = document.createElement('script');
         configScript.id = 'ga-config-script';
         configScript.innerHTML = `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}');
+          // debug_mode: true allows events to show up in GA4 DebugView immediately
+          gtag('config', '${GA_ID}', { 'debug_mode': true });
         `;
         document.head.appendChild(configScript);
       }
@@ -55,12 +56,8 @@ export const Analytics: React.FC = () => {
       }
     };
 
-    // Use requestIdleCallback if available, otherwise fallback to setTimeout
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => initAnalytics(), { timeout: 2000 });
-    } else {
-      setTimeout(initAnalytics, 2000);
-    }
+    // Load analytics almost immediately for debugging
+    setTimeout(initAnalytics, 500);
   }, []);
 
   return null;
