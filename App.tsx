@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -11,6 +12,7 @@ import { Footer } from './components/Footer';
 import { SeoBlock } from './components/SeoBlock';
 import { ClientDashboard } from './components/ClientDashboard';
 import { Analytics } from './components/Analytics';
+import { FloatingContact } from './components/FloatingContact';
 import { Language } from './utils/translations';
 
 const App: React.FC = () => {
@@ -55,6 +57,7 @@ const App: React.FC = () => {
           </div>
           <SeoBlock language={language} />
           <Footer language={language} />
+          <FloatingContact />
         </main>
       ) : (
         <ClientDashboard language={language} onLogout={handleLogout} />
