@@ -37,7 +37,7 @@ export const FloatingContact: React.FC = () => {
             href="https://t.me/HappyBoxDan" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => trackLead('telegram', 'footer', 'click')}
+            onClick={() => trackLead('telegram', 'floating', 'click')}
             className="flex items-center gap-3 bg-brand-blue text-white px-4 py-3 rounded-2xl shadow-xl hover:scale-105 transition-transform"
           >
             <span className="font-bold text-sm">Telegram</span>
@@ -51,7 +51,7 @@ export const FloatingContact: React.FC = () => {
             href="https://wa.me/8613048875834" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => trackLead('whatsapp', 'footer', 'click')}
+            onClick={() => trackLead('whatsapp', 'floating', 'click')}
             className="flex items-center gap-3 bg-[#25D366] text-white px-4 py-3 rounded-2xl shadow-xl hover:scale-105 transition-transform"
           >
             <span className="font-bold text-sm">WhatsApp</span>

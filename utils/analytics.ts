@@ -4,53 +4,45 @@ export type ClickLocation = 'header' | 'hero' | 'contact_section' | 'footer' | '
 export type InteractionType = 'click' | 'hover' | 'copy';
 
 /**
- * Tracks interactions with contact methods.
- * Creates distinct event names like 'telegram_click' or 'whatsapp_hover'
- * so they are immediately visible in GA4 Top Events list.
+ * Tracks a lead generation event with detailed metadata.
+ * Optimized for GA4 'contact_interaction' event.
  */
 export const trackLead = (
   platform: MessengerPlatform, 
   location: ClickLocation, 
   action: InteractionType = 'click'
 ) => {
-  if (typeof window === 'undefined') return;
-
-  // Create a descriptive event name: e.g., "telegram_click", "whatsapp_hover"
-  const eventName = `${platform}_${action}`;
+  // Styles for console debugging
+  const colors = {
+    click: 'background: #2397d0; color: white',
+    hover: 'background: #fff176; color: black',
+    copy: 'background: #07C160; color: white'
+  };
 
   // 1. Google Analytics 4
-  if ((window as any).gtag) {
-    (window as any).gtag('event', eventName, {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'contact_interaction', {
       'messenger_platform': platform,
       'interaction_type': action,
       'click_location': location,
       'event_category': 'conversion',
-      // Keep original parameters for advanced filtering, 
-      // but the eventName itself now carries the main info.
-      'value': action === 'click' ? 1.0 : 0.1,
-      'currency': 'USD'
+      // Value helps GA4 identify importance
+      'value': action === 'click' ? 1.0 : 0.2 
     });
+    
+    console.log(
+      `%c[GA4 Event]%c ${platform.toUpperCase()} | ${action.toUpperCase()} | ${location}`,
+      colors[action] || '',
+      'font-weight: bold; color: inherit'
+    );
   }
 
-  // 2. Yandex Metrica
-  if ((window as any).ym) {
-    (window as any).ym(105783207, 'reachGoal', eventName, {
+  // 2. Yandex Metrica (ID: 105783207)
+  if (typeof window !== 'undefined' && (window as any).ym) {
+    (window as any).ym(105783207, 'reachGoal', 'messenger_click', {
       platform,
-      location,
-      action
+      action,
+      location
     });
   }
-
-  // 3. Dev Console logging
-  const styles = {
-    click: 'background: #2397d0; color: white; padding: 2px 5px; border-radius: 4px;',
-    hover: 'background: #fff176; color: black; padding: 2px 5px; border-radius: 4px;',
-    copy: 'background: #07C160; color: white; padding: 2px 5px; border-radius: 4px;'
-  };
-
-  console.log(
-    `%c${eventName.toUpperCase()}%c at ${location}`,
-    styles[action as keyof typeof styles] || '',
-    'font-weight: bold; margin-left: 10px;'
-  );
 };
