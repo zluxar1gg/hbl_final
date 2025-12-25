@@ -40,7 +40,7 @@ export const translations = {
       cards: [
         { 
           id: '1688', 
-          title: 'Master 1688.com', 
+          title: '1688.com', 
           desc: 'Buy directly from factories at the source price.',
           steps: [
             'Rating 5–4 is the standard for reliability. Sellers with ratings below 4.0 are risky and often slow.',
@@ -54,7 +54,7 @@ export const translations = {
         },
         { 
           id: 'poizon', 
-          title: 'Poizon (Dewu) Advice', 
+          title: 'Poizon (Dewu)', 
           desc: 'Authentic luxury goods 30-50% cheaper than local retail.',
           steps: [
             'Prices vary by size because it\'s a stock-market model. Check adjacent sizes to save up to 30%.',
@@ -410,12 +410,12 @@ export const translations = {
       ]
     },
     guides: {
-      title: 'Советы экспертов',
+      title: 'Экспертные советы',
       subtitle: 'Покупайте в Китае как профи с нашими инсайдерскими советами',
       cards: [
         { 
           id: '1688', 
-          title: 'Мастер 1688.com', 
+          title: '1688.com', 
           desc: 'Покупайте напрямую у фабрик по самым низким ценам.',
           steps: [
             'Рейтинг 5–4: это стандарт надежности. Если рейтинг ниже 4.0 — велик риск брака или очень долгой отгрузки.',
@@ -429,7 +429,7 @@ export const translations = {
         },
         { 
           id: 'poizon', 
-          title: 'Советы по Poizon (Dewu)', 
+          title: 'Poizon (Dewu)', 
           desc: 'Оригинальные бренды на 30-50% дешевле, чем в магазинах вашего города.',
           steps: [
             '95 New vs Damaged Box: 95 New — это Б/У товар (95% от нового), а Damaged Box — абсолютно новая вещь с примятой коробкой (экономия!).',
@@ -654,16 +654,16 @@ export const translations = {
         is: 'Исландия',
         at: 'Австрия',
         be: 'Бельгия',
-        bg: 'Болгария',
+        bg: 'Бугария',
         hr: 'Хорватия',
         cy: 'Кипр',
         cz: 'Чехия',
-        dk: ' Denmark',
-        ee: 'Естония',
+        dk: ' Дания',
+        ee: 'Эстония',
         fi: 'Финляндия',
         fr: 'Франция',
         de: 'Германия',
-        gr: 'Greece',
+        gr: 'Греция',
         hu: 'Венгрия',
         ie: 'Ирландия',
         it: 'Италия',

@@ -2,12 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Language, translations } from '../utils/translations';
 import { 
-  BookOpen, 
   X, 
   ArrowRight, 
-  Zap, 
-  ShoppingBag, 
-  Fingerprint, 
   Send, 
   CheckCircle2, 
   Lightbulb,
@@ -29,19 +25,21 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
     return () => { document.body.style.overflow = 'unset'; };
   }, [activeGuide]);
 
-  const getIcon = (id: string, size = 24) => {
-    switch(id) {
-      case '1688': return <Zap size={size} className="text-orange-500" />;
-      case 'poizon': return <Fingerprint size={size} className="text-cyan-500" />;
-      case 'taobao': return <ShoppingBag size={size} className="text-brand-blue" />;
-      default: return <BookOpen size={size} />;
-    }
-  };
-
   const handleBuyForMe = () => {
     trackLead('telegram', 'contact_section', 'click');
     window.open('https://t.me/HappyBoxDan', '_blank');
   };
+
+  const getBrandTextStyle = (id: string) => {
+    switch (id) {
+      case '1688': return 'text-[#FF6A00]';
+      case 'poizon': return 'text-[#00B2B2]';
+      case 'taobao': return 'bg-gradient-to-r from-[#FF8E00] to-[#FF4400] bg-clip-text text-transparent';
+      default: return 'text-brand-dark';
+    }
+  };
+
+  const getExpertLabel = () => language === 'en' ? 'Expert Advice' : 'Экспертные советы';
 
   return (
     <section className="py-24 bg-brand-light/30">
@@ -60,15 +58,14 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
             <div 
               key={card.id}
               onClick={() => setActiveGuide(card)}
-              className="bg-white p-8 rounded-[35px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
+              className="bg-white p-10 rounded-[45px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                {getIcon(card.id, 32)}
-              </div>
-              <h3 className="text-2xl font-black text-brand-dark mb-3 leading-tight">{card.title}</h3>
-              <p className="text-gray-500 font-bold mb-8 flex-grow">{card.desc}</p>
-              <div className="flex items-center gap-2 text-brand-blue font-black uppercase text-xs tracking-widest">
-                {language === 'en' ? 'Expert Advice' : 'Советы эксперта'} <ArrowRight size={16} />
+              <h3 className={`text-4xl font-black mb-4 leading-tight tracking-tighter ${getBrandTextStyle(card.id)}`}>
+                {card.title}
+              </h3>
+              <p className="text-gray-500 font-bold mb-10 flex-grow text-lg leading-relaxed">{card.desc}</p>
+              <div className="flex items-center gap-2 text-brand-blue font-black uppercase text-[11px] tracking-[0.2em] pt-4 border-t border-gray-50">
+                {getExpertLabel()} <ArrowRight size={16} />
               </div>
             </div>
           ))}
@@ -84,15 +81,10 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
               className="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-8 pb-4 flex justify-between items-center bg-gray-50/50">
-                <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                      {getIcon(activeGuide.id)}
-                   </div>
-                   <div>
-                    <h2 className="text-2xl font-black text-brand-dark leading-none mb-1">{activeGuide.title}</h2>
-                    <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{language === 'en' ? 'Expert Advice' : 'Советы эксперта'}</p>
-                   </div>
+              <div className="p-8 pb-6 flex justify-between items-center bg-gray-50/50">
+                <div>
+                  <h2 className={`text-3xl font-black leading-none mb-1.5 tracking-tighter ${getBrandTextStyle(activeGuide.id)}`}>{activeGuide.title}</h2>
+                  <p className="text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">{getExpertLabel()}</p>
                 </div>
                 <button 
                   onClick={() => setActiveGuide(null)}
@@ -105,7 +97,7 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
               <div className="p-8 pt-6 overflow-y-auto space-y-8">
                 {/* Steps Section */}
                 <div className="space-y-4">
-                  <h4 className="text-sm font-black text-brand-blue uppercase tracking-widest flex items-center gap-2">
+                  <h4 className="text-xs font-black text-brand-blue uppercase tracking-[0.2em] flex items-center gap-2">
                     <ArrowDownCircle size={16} /> {language === 'en' ? 'Step-by-Step' : 'Пошагово'}
                   </h4>
                   <ul className="space-y-4">
@@ -125,7 +117,7 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
                 {/* Pro Tip Section */}
                 <div className="bg-brand-yellow/10 border-2 border-brand-yellow/30 p-6 rounded-[30px] relative overflow-hidden group">
                   <div className="relative z-10">
-                    <div className="flex items-center gap-2 text-brand-dark font-black mb-3 uppercase text-xs tracking-widest">
+                    <div className="flex items-center gap-2 text-brand-dark font-black mb-3 uppercase text-[10px] tracking-[0.2em]">
                       <Lightbulb size={16} className="text-brand-dark" /> Pro Tip
                     </div>
                     <p className="text-brand-dark font-bold leading-relaxed italic">
@@ -144,8 +136,8 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
                       <TrendingDown size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest">{activeGuide.compare.label}</p>
-                      <p className="text-brand-dark font-black">{language === 'en' ? 'Local Price:' : 'Локальная цена:'} <span className="line-through text-gray-400">{activeGuide.compare.local}</span></p>
+                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{activeGuide.compare.label}</p>
+                      <p className="text-brand-dark font-black">{language === 'en' ? 'Local Price:' : 'Локальная цена:'} <span className="line-through text-gray-400 font-bold">{activeGuide.compare.local}</span></p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -166,7 +158,7 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
                 </button>
                 <button 
                   onClick={() => setActiveGuide(null)}
-                  className="w-full text-gray-400 py-2 font-black text-sm uppercase tracking-widest hover:text-gray-600 transition-colors"
+                  className="w-full text-gray-400 py-2 font-black text-xs uppercase tracking-[0.2em] hover:text-gray-600 transition-colors"
                 >
                   {t.close}
                 </button>

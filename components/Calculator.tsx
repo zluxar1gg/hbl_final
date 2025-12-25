@@ -240,7 +240,6 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                     alt="Happy Box Calculator Mascot" 
                     className="w-[300px] h-auto object-contain drop-shadow-xl"
                   />
-                  <p className="text-gray-400 font-bold mt-8 text-center max-w-xs">{t.subtitle}</p>
                 </div>
               )}
             </div>
