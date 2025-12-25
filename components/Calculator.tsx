@@ -184,7 +184,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                   {t.button}
                 </button>
 
-                {/* INLINE QUIZ CTA - One line placement under the button */}
+                {/* INLINE QUIZ CTA */}
                 <div className="flex flex-row items-center justify-center gap-4 py-2 animate-fade-in">
                   <p className="text-gray-500 font-bold text-sm leading-tight">
                     {qt.cta}
@@ -200,9 +200,9 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
             </div>
 
             {/* Right Column: Results or Mascot */}
-            <div className="h-full flex items-center justify-center min-h-[450px]">
+            <div className="h-full flex items-center justify-center min-h-[320px] lg:min-h-[450px]">
               {result ? (
-                <div className="w-full text-center p-12 bg-gradient-to-br from-brand-blue to-blue-400 rounded-[40px] text-white shadow-2xl animate-fade-in flex flex-col justify-center min-h-[450px] relative overflow-hidden group">
+                <div className="w-full text-center p-8 lg:p-12 bg-gradient-to-br from-brand-blue to-blue-400 rounded-[40px] text-white shadow-2xl animate-fade-in flex flex-col justify-center min-h-[400px] lg:min-h-[450px] relative overflow-hidden group">
                   {result.isOther ? (
                     <div className="space-y-6 relative z-10">
                       <h3 className="text-3xl font-black tracking-tight">{t.contactQuote}</h3>
@@ -214,8 +214,8 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                       <p className="text-blue-100 font-black mb-3 text-xs uppercase tracking-[0.2em] bg-white/10 py-2 px-6 rounded-full inline-block">
                         {result.method === 'air' ? t.methodAir : result.method === 'sea' ? t.methodSea : t.methodRail}
                       </p>
-                      <h3 className="text-8xl font-black mb-4 tracking-tighter drop-shadow-lg">${result.price}</h3>
-                      <p className="text-2xl font-bold mb-8 flex items-center justify-center gap-2">
+                      <h3 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter drop-shadow-lg">${result.price}</h3>
+                      <p className="text-xl md:text-2xl font-bold mb-8 flex items-center justify-center gap-2">
                         {t.time}: <span className="text-brand-yellow">{result.time}</span>
                       </p>
                       {result.warningNote && (
@@ -234,11 +234,11 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                   <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-500/20 rounded-full -ml-24 -mb-24 blur-3xl"></div>
                 </div>
               ) : (
-                <div className="bg-gray-50 rounded-[40px] w-full flex flex-col items-center justify-center min-h-[450px] border border-gray-100 p-12 shadow-inner">
+                <div className="bg-gray-50 rounded-[40px] w-full flex flex-col items-center justify-center min-h-[320px] lg:min-h-[450px] border border-gray-100 p-6 lg:p-12 shadow-inner overflow-hidden">
                    <img 
                     src="https://i.ibb.co/Fqyggpqt/happyboxcalc.webp" 
                     alt="Happy Box Calculator Mascot" 
-                    className="w-[300px] h-auto object-contain drop-shadow-xl"
+                    className="w-full max-w-[240px] md:max-w-[300px] lg:max-w-[400px] h-auto object-contain drop-shadow-xl animate-float"
                   />
                 </div>
               )}
