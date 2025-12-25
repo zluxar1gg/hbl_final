@@ -102,12 +102,14 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
   const prevMobile = () => setMobileIndex((prev) => (prev - 1 + allTestimonials.length) % allTestimonials.length);
 
   return (
-    <section className="pb-8 md:pb-20 pt-0 bg-cream">
+    <section className="pb-16 md:pb-24 pt-20 md:pt-24 bg-cream">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 md:mb-12 text-brand-dark text-center mx-auto tracking-tight">{t.title}</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-16 md:mb-24 text-brand-dark text-center mx-auto tracking-tight max-w-4xl">
+          {t.title}
+        </h2>
         
         {/* DESKTOP */}
-        <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-16 relative">
+        <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-16 relative shadow-sm border border-brand-blue/5">
           <div className="grid grid-cols-3 gap-6 lg:gap-8">
             {testimonialPages[desktopPage].map((review, idx) => (
               <ReviewCard key={idx} review={review} />
@@ -132,15 +134,15 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
         </div>
 
         {/* MOBILE */}
-        <div className="md:hidden bg-brand-light rounded-[30px] p-4 relative">
+        <div className="md:hidden bg-brand-light rounded-[30px] p-6 relative border border-brand-blue/5">
           <ReviewCard key="mobile" review={allTestimonials[mobileIndex]} compact={true} />
-          <div className="flex justify-center gap-6 mt-4">
+          <div className="flex justify-center gap-6 mt-6">
             <button 
               onClick={prevMobile} 
               aria-label="Previous review"
-              className="w-10 h-10 rounded-full bg-white text-brand-blue shadow-md flex items-center justify-center active:scale-95"
+              className="w-12 h-12 rounded-full bg-white text-brand-blue shadow-md flex items-center justify-center active:scale-95"
             >
-              <ChevronLeft size={20} strokeWidth={2.5} />
+              <ChevronLeft size={24} strokeWidth={2.5} />
             </button>
             <div className="flex items-center gap-2">
               {allTestimonials.map((_, idx) => (
@@ -150,9 +152,9 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
             <button 
               onClick={nextMobile} 
               aria-label="Next review"
-              className="w-10 h-10 rounded-full bg-white text-brand-blue shadow-md flex items-center justify-center active:scale-95"
+              className="w-12 h-12 rounded-full bg-white text-brand-blue shadow-md flex items-center justify-center active:scale-95"
             >
-              <ChevronRight size={20} strokeWidth={2.5} />
+              <ChevronRight size={24} strokeWidth={2.5} />
             </button>
           </div>
         </div>

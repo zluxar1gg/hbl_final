@@ -25,6 +25,112 @@ export const translations = {
       },
       stats: 'customers from around the world'
     },
+    deliveryPath: {
+      title: 'Your Parcel\'s Journey',
+      steps: [
+        { title: 'Warehouse', desc: 'Reception & Inspection' },
+        { title: 'Processing', desc: 'Packing & Consolidation' },
+        { title: 'Customs', desc: 'Clearance & Duties' },
+        { title: 'Delivery', desc: 'Direct to your door' }
+      ]
+    },
+    guides: {
+      title: 'Expert Advice',
+      subtitle: 'Master the art of shopping in China with our insider tips and pro advice',
+      cards: [
+        { 
+          id: '1688', 
+          title: 'Master 1688.com', 
+          desc: 'Buy directly from factories at the source price.',
+          steps: [
+            'Rating 5–4 is the standard for reliability. Sellers with ratings below 4.0 are risky and often slow.',
+            'Verify real weight/dimensions: listings often have inaccurate data. Ask before paying to avoid shipping surprises.',
+            'Check electronics for 220V compatibility and specify your required plug type.',
+            'Specify individual packaging for items like clothes, notebooks, plush toys, etc. otherwise they may arrive in a bulk "bag".',
+            'For fragile items, request a "wood crate" for safer transit within China.'
+          ],
+          tip: 'Stock numbers on 1688 are often inaccurate. Always send us the link first so our agent can verify the REAL availability before you pay.',
+          compare: { label: 'Electronics', local: '$150', china: '$45' }
+        },
+        { 
+          id: 'poizon', 
+          title: 'Poizon (Dewu) Advice', 
+          desc: 'Authentic luxury goods 30-50% cheaper than local retail.',
+          steps: [
+            'Prices vary by size because it\'s a stock-market model. Check adjacent sizes to save up to 30%.',
+            '"95 New" means USED/Pre-owned (95% condition). "Damaged Box" means BRAND NEW with a dented box.',
+            'Verification system: Poizon inspects every item, which significantly reduces counterfeit risks.',
+            'Keep the blue tag and NFC certificate! They are essential for proving authenticity and resale value.'
+          ],
+          tip: 'Use the price chart to buy during dips. Never remove the blue tag until you are 100% sure about the item.',
+          compare: { label: 'Jordan 4 Retro', local: '$480', china: '$290' }
+        },
+        { 
+          id: 'taobao', 
+          title: 'Taobao & Tmall', 
+          desc: 'Find the best deals with real customer reviews.',
+          steps: [
+            'Tmall (red icon) features official brands/dealers with near-zero defect risk. Regular Taobao is cheaper.',
+            'Always look for the camera icon in reviews to see "Live Photos" instead of studio renders.',
+            'Prioritize sellers active for 5–10 years; they value their reputation and history on the platform.'
+          ],
+          tip: 'Use our warehouse for "Consolidation". Buy small items from 10 different stores, and we will pack them into ONE box to save you up to 60% on shipping.',
+          compare: { label: 'Design Decor', local: '$85', china: '$12' }
+        }
+      ],
+      close: 'Close Advice',
+      buyForMe: "Too complex? We can handle the full purchasing process for you."
+    },
+    quiz: {
+      cta: 'Not sure which delivery to choose?',
+      button: 'Take 30s Quiz',
+      title: 'Find Your Perfect Route',
+      back: 'Back',
+      questions: {
+        country: 'Where are we shipping to?',
+        category: 'What type of goods?',
+        weight: 'Approximate weight?',
+        priority: 'What is your priority?'
+      },
+      options: {
+        us_ca: '🇺🇸 USA / Canada',
+        eu: '🇪🇺 Europe',
+        uae: '🇦🇪 UAE (Dubai)',
+        au: '🇦🇺 Australia',
+        clothing: 'Clothing & Shoes',
+        electronics: 'Electronics',
+        cosmetics: 'Cosmetics',
+        furniture: 'Furniture / Heavy',
+        other: 'Other',
+        under30: 'Under 30 kg',
+        over30: 'Over 30 kg',
+        fast: 'Fastest Delivery',
+        cheap: 'Lowest Price'
+      },
+      results: {
+        title: 'Recommended Route:',
+        air: {
+          title: 'Express Air',
+          desc: 'Air freight is the only reliable option for this weight class. Fast, trackable, and efficient.',
+          desc_us_light: 'Sea freight to USA/Canada is only available from 30kg. For your weight, Air is the only reliable option.',
+          desc_uae_light: 'Land freight (Truck) starts from 30kg. For smaller parcels, we use fast air lines.',
+          desc_speed: 'When time is of the essence, Air Express is the only choice. The most stable and fastest route.'
+        },
+        sea: {
+          title: 'Sea Freight',
+          desc: 'The best way to save on heavy shipments. Ideal for furniture or large commercial batches.'
+        },
+        rail: {
+          title: 'Rail / Multimodal',
+          desc: 'For heavy cargo to EU, there are cost-effective ground routes. Note: Availability depends on item type.'
+        },
+        truck: {
+          title: 'Road Freight (Truck)',
+          desc: 'Optimal balance: cheaper than air, faster than sea. Delivered by truck directly to your door.'
+        }
+      },
+      contactBtn: 'Discuss this route'
+    },
     about: {
       title: 'For over 9 years, we\'ve been providing reliable shipping and purchasing services from China and Hong Kong.',
       text: 'We are one of the **most trusted purchasing and forwarding services**, with our own automated warehouse in China and Hong Kong. We ensure your delivery gets straight to your doorstep.'
@@ -36,7 +142,7 @@ export const translations = {
         reception: { title: 'Parcel Reception – Free of Charge', text: 'No matter the store, number of items, or weight, we receive all incoming parcels at our warehouse completely free.' },
         storage: { title: 'Storage – Free of Charge', text: 'All your purchases are stored for free—no time limits. Enjoy worry-free storage while we handle your parcels.' },
         consolidation: { title: 'Consolidation – Free of Charge', text: 'We combine any number of orders from one or multiple stores into a single package for free, helping you save on shipping costs.' },
-        purchasing: { title: 'Purchasing Items by Our Specialists – 10% of the item\'s value', text: '(minimum RMB 120 for online stores, RMB 200 for offline stores) Prefer to shop yourself? There\'s no commission at all! If you\'d like our specialists to purchase items for you, we handle it carefully and efficiently, making the process effortless.' },
+        purchasing: { title: 'Purchasing Items by Our Specialists – 1% of the item\'s value', text: '(minimum RMB 120 for online stores, RMB 200 for offline stores) Prefer to shop yourself? There\'s no commission at all! If you\'d like our specialists to purchase items for you, we handle it carefully and efficiently, making the process effortless.' },
         photo: { title: 'Product Photo/Video – Free of Charge', text: 'We can take photos or videos of your items—or specific parts—so you can check them before shipment.' },
         splitting: { title: 'Splitting One Order into Multiple Shipments – Free of Charge', text: 'Need to split a large order into multiple shipments? We do it for free, making shipping flexible and convenient for you.' },
         packing: { title: 'Package Packing – Free of Charge', text: 'We provide high-quality packaging suitable for international shipping at no extra cost, ensuring your purchases arrive safely.' },
@@ -94,7 +200,7 @@ export const translations = {
         {
           name: "Polina K.",
           location: "Warsaw, Poland",
-          text: "Ordered a Dyson hair dryer. It's the real deal! Works with my voltage perfectly. The team checked the serial number for me before shipping. Highly recommended.",
+          text: "Заказала фен Dyson. It's the real deal! Works with my voltage perfectly. The team checked the serial number for me before shipping. Highly recommended.",
           image: "https://i.ibb.co/6JmvY3Kp/Happy-Box-review7.webp"
         },
         {
@@ -152,6 +258,14 @@ export const translations = {
       contactBtn: 'Contact Support',
       altDelivery: 'Interested in Sea or Rail delivery?',
       altContact: 'Contact us for a quote',
+      methodAir: 'Air Express',
+      methodSea: 'Sea Freight',
+      methodRail: 'Rail/Truck',
+      minWeightSeaRail: 'Sea/Rail available from 15kg',
+      minWeightSeaUS: 'Sea delivery for US/CA starts from 30kg. For lighter loads, Air is the only option.',
+      euDisclaimer: 'Note: Not all items can be shipped by Sea/Land due to local laws. Please consult our support.',
+      bulkInquiry: 'For heavy shipments to this destination, please contact us for custom rates.',
+      onlyAirForCountry: 'Only Air delivery is available for this destination',
       countries: {
         us: 'USA',
         ca: 'Canada',
@@ -286,6 +400,112 @@ export const translations = {
       },
       stats: 'клиентов со всего мира'
     },
+    deliveryPath: {
+      title: 'Путь вашей посылки',
+      steps: [
+        { title: 'Склад', desc: 'Прием и Проверка' },
+        { title: 'Обработка', desc: 'Упаковка и Консолидация' },
+        { title: 'Таможня', desc: 'Оформление и Пошлины' },
+        { title: 'Доставка', desc: 'Прямо в ваши руки' }
+      ]
+    },
+    guides: {
+      title: 'Советы экспертов',
+      subtitle: 'Покупайте в Китае как профи с нашими инсайдерскими советами',
+      cards: [
+        { 
+          id: '1688', 
+          title: 'Мастер 1688.com', 
+          desc: 'Покупайте напрямую у фабрик по самым низким ценам.',
+          steps: [
+            'Рейтинг 5–4: это стандарт надежности. Если рейтинг ниже 4.0 — велик риск брака или очень долгой отгрузки.',
+            'Ловушка веса: в карточках часто врут про габариты. Уточняйте реальные параметры упаковки, чтобы цена доставки не стала сюрпризом.',
+            'Электроника: обязательно проверяйте вольтаж (220V) и уточняйте нужный тип вилки.',
+            'Упаковка: если берете одежду, тетради, игрушки и т.д., требуйте индивидуальную упаковку, иначе приедет "мешок" вещей.',
+            'Доп. защита: просите деревянную обрешетку (wood crate) для хрупких или тяжелых товаров при перевозке по Китаю.'
+          ],
+          tip: 'Остатки на 1688 часто неактуальны. Сначала отправьте ссылку нам: наш агент проверит РЕАЛЬНОЕ наличие, прежде чем вы оплатите заказ.',
+          compare: { label: 'Электроника', local: '15,000₽', china: '4,500₽' }
+        },
+        { 
+          id: 'poizon', 
+          title: 'Советы по Poizon (Dewu)', 
+          desc: 'Оригинальные бренды на 30-50% дешевле, чем в магазинах вашего города.',
+          steps: [
+            '95 New vs Damaged Box: 95 New — это Б/У товар (95% от нового), а Damaged Box — абсолютно новая вещь с примятой коробкой (экономия!).',
+            'Биржа цен: цена зависит от размера и меняется в реальном времени. Проверьте соседние размеры — разница бывает до 30%.',
+            'Система проверки: Poizon осматривает каждую вещь, что сильно снижает риск подделки, но сохраняйте бдительность.',
+            'Берегите синюю клипсу и NFC-сертификат! Они подтверждают проверку платформой и важны при перепродаже.'
+          ],
+          tip: 'Следите за графиком цен, чтобы купить на "дне". Не срезайте синюю пломбу, пока не убедитесь, что товар вам подходит.',
+          compare: { label: 'Jordan 4 Retro', local: '45,000₽', china: '28,000₽' }
+        },
+        { 
+          id: 'taobao', 
+          title: 'Taobao и Tmall', 
+          desc: 'Лучшие предложения и честные отзывы покупателей.',
+          steps: [
+            'Tmall (красный значок) — это официальные бренды с практически нулевым риском брака. Обычный Taobao дешевле.',
+            'Живые фото: всегда ищите иконку камеры в отзывах. Студийные фото продавца часто сильно отличаются от реальности.',
+            'Стаж магазина: выбирайте продавцов, которые на площадке 5–10 лет — они больше дорожат репутацией.'
+          ],
+          tip: 'Используйте наш склад для «Консолидации». Покупайте мелочи в 10 разных магазинах, а мы соберем их в ОДНУ коробку, экономя вам до 60% на доставке.',
+          compare: { label: 'Декор для дома', local: '8,000₽', china: '1,200₽' }
+        }
+      ],
+      close: 'Закрыть советы',
+      buyForMe: "Сложно разобраться? Мы полностью возьмем выкуп на себя."
+    },
+    quiz: {
+      cta: 'Не знаете, что выбрать?',
+      button: 'Тест за 30 сек',
+      title: 'Идеальный маршрут',
+      back: 'Назад',
+      questions: {
+        country: 'Куда везем груз?',
+        category: 'Что везем?',
+        weight: 'Общий вес?',
+        priority: 'Что для вас важнее?'
+      },
+      options: {
+        us_ca: '🇺🇸 США / Канада',
+        eu: '🇪🇺 Европа',
+        uae: '🇦🇪 ОАЭ (Дубай)',
+        au: '🇦🇺 Австралия',
+        clothing: 'Одежда и Обувь',
+        electronics: 'Электроника',
+        cosmetics: 'Косметика',
+        furniture: 'Мебель / Тяжелое',
+        other: 'Другое',
+        under30: 'До 30 кг',
+        over30: 'Более 30 кг',
+        fast: 'Скорость',
+        cheap: 'Цена'
+      },
+      results: {
+        title: 'Наша рекомендация:',
+        air: {
+          title: 'Авиа Экспресс',
+          desc: 'Быстрая и надежная доставка. Идеально для небольших и ценных грузов.',
+          desc_us_light: 'Морская доставка в США/Канаду доступна только от 30 кг. Для вашего веса Авиа — единственный надежный вариант.',
+          desc_uae_light: 'Наземная доставка (грузовик) начинается от 30 кг. Для небольших посылок используем быстрые авиалинии.',
+          desc_speed: 'Если время поджимает — только Авиа. Самый стабильный и быстрый маршрут.'
+        },
+        sea: {
+          title: 'Морская перевозка',
+          desc: 'Лучший способ сэкономить на тяжелом грузе. Идеально для мебели или больших партий товара.'
+        },
+        rail: {
+          title: 'Авто / ЖД Доставка',
+          desc: 'Комбинированный маршрут: морем или поездом до хаба в ЕС, затем автодоставка до двери. Оптимально для тяжелых грузов.'
+        },
+        truck: {
+          title: 'Наземная (Авто)',
+          desc: 'Оптимальный баланс: дешевле чем авиа, но быстрее чем море. Доставим грузовиком до двери.'
+        }
+      },
+      contactBtn: 'Обсудить маршрут'
+    },
     about: {
       title: 'Уже более 9 лет мы обеспечиваем надежную доставку и выкуп товаров из Китая и Гонконга.',
       text: 'Мы являемся одним из **самых надежных сервисов по выкупу и доставке**, с собственным автоматизированным складом в Китае и Гонконге. Мы гарантируем доставку прямо до вашей двери.'
@@ -297,7 +517,7 @@ export const translations = {
         reception: { title: 'Прием посылок – Бесплатно', text: 'Независимо от магазина, количества товаров или веса, мы принимаем все входящие посылки на нашем складе абсолютно бесплатно.' },
         storage: { title: 'Хранение – Бесплатно', text: 'Все ваши покупки хранятся бесплатно и без ограничений по времени. Наслаждайтесь спокойствием, пока мы заботимся о ваших посылках.' },
         consolidation: { title: 'Консолидация – Бесплатно', text: 'Мы объединяем любое количество заказов из одного или разных магазинов в одну посылку бесплатно, помогая вам экономить на доставке.' },
-        purchasing: { title: 'Выкуп товаров нашими специалистами – 10% от стоимости', text: '(минимум 120 юаней для онлайн-магазинов, 200 юаней для офлайн). Хотите покупать сами? Тогда никакой комиссии! Если вы поручите выкуп нам, мы сделаем это быстро и эффективно.' },
+        purchasing: { title: 'Выкуп товаров нашими специалистами – 1% от стоимости', text: '(минимум 120 юаней для онлайн-магазинов, 200 юаней для офлайн). Хотите покупать сами? Тогда никакой комиссии! Если вы поручите выкуп нам, мы сделаем это быстро и эффективно.' },
         photo: { title: 'Фото/Видео товара – Бесплатно', text: 'Мы можем сделать фото или видео ваших товаров (или их деталей), чтобы вы могли проверить их перед отправкой.' },
         splitting: { title: 'Разделение заказа на несколько посылок – Бесплатно', text: 'Нужно разделить большой заказ? Мы сделаем это бесплатно, обеспечивая гибкость и удобство доставки.' },
         packing: { title: 'Упаковка посылок – Бесплатно', text: 'Мы предоставляем качественную упаковку для международной пересылки без дополнительных затрат, чтобы ваши покупки доехали в сохранности.' },
@@ -413,6 +633,14 @@ export const translations = {
       contactBtn: 'Написать в поддержку',
       altDelivery: 'Интересует ЖД или Море?',
       altContact: 'Свяжитесь с нами для расчета',
+      methodAir: 'Авиа Экспресс',
+      methodSea: 'Морская перевозка',
+      methodRail: 'ЖД / Авто',
+      minWeightSeaRail: 'Море/ЖД доступно от 15кг',
+      minWeightSeaUS: 'Морская доставка в США/Канаду от 30кг. При меньшем весе доступна только Авиа.',
+      euDisclaimer: 'Внимание: не все товары могут быть приняты для моря/наземки из-за местных законов ЕС. Уточняйте у нас.',
+      bulkInquiry: 'Для крупных партий в это направление, пожалуйста, напишите нам для расчета спец. тарифа.',
+      onlyAirForCountry: 'Для этого направления доступна только Авиадоставка',
       countries: {
         us: 'США',
         ca: 'Канада',
@@ -430,8 +658,8 @@ export const translations = {
         hr: 'Хорватия',
         cy: 'Кипр',
         cz: 'Чехия',
-        dk: 'Дания',
-        ee: 'Эстония',
+        dk: ' Denmark',
+        ee: 'Естония',
         fi: 'Финляндия',
         fr: 'Франция',
         de: 'Германия',
@@ -475,7 +703,7 @@ export const translations = {
       privacy: 'Политика конфиденциальности',
       terms: 'Пользовательское соглашение',
       rights: 'HappyBox. All rights reserved.',
-      iUnderstand: 'Я понимаю',
+      iUnderstand: 'I Understand',
       privacyTitle: 'Политика конфиденциальности',
       termsTitle: 'Пользовательское соглашение'
     },
@@ -485,40 +713,40 @@ export const translations = {
         destinations: {
           title: 'Направления доставки',
           items: [
-            'Доставка из Китая в США',
-            'Доставка из Китая в Великобританию',
-            'Доставка из Китая в ОАЭ (Дубай)',
-            'Доставка из Китая в Германию',
-            'Доставка из Китая во Францию',
-            'Доставка из Китая в Канаду',
-            'Доставка из Китая в Австралию',
-            'Доставка из Гонконга в США',
-            'Доставка из Гонконга в Европу'
+            'Delivery from China to USA',
+            'Shipping from China to UK',
+            'Delivery from China to UAE (Dubai)',
+            'Shipping from China to Germany',
+            'Delivery from China to France',
+            'Shipping from China to Canada',
+            'Delivery from China to Australia',
+            'Shipping from Hong Kong to USA',
+            'Shipping from Hong Kong to Europe'
           ]
         },
         services: {
-          title: 'Наши услуги',
+          title: 'Our Services',
           items: [
-            'Доставка мелких посылок из Китая',
-            'Доставка на Amazon FBA США',
-            'DDP доставка (без пошлин)',
-            'Консолидация посылок в Китае',
-            'Бесплатный склад в Китае',
-            'Услуги байера (посредника)',
-            'Доставка мебели из Китая',
-            'Доставка электроники'
+            'Small Package Delivery from China',
+            'Amazon FBA Shipping to USA',
+            'DDP Shipping (Tax Free)',
+            'Consolidation Service China',
+            'Free Warehousing in China',
+            'Personal Shopper Service',
+            'Furniture Delivery from China',
+            'Electronics Shipping'
           ]
         },
         platforms: {
-          title: 'Платформы для шопинга',
+          title: 'Shopping Agents',
           items: [
-            'Посредник Таобао (Taobao)',
-            'Выкуп с 1688',
-            'Как купить на Tmall',
-            'Доставка с Poizon (Dewu)',
-            'Посредник Alibaba',
-            'Выкуп с Weidian',
-            'Покупка б/у товаров на Xianyu'
+            'Taobao Agent',
+            '1688 Agent',
+            'Buy from Tmall',
+            'Poizon (Dewu) Delivery',
+            'Alibaba Forwarding Agent',
+            'Weidian Agent',
+            'Xianyu Second-hand Agent'
           ]
         }
       }
