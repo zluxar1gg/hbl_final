@@ -48,7 +48,7 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
   const fullEmail = `${emailUser}@${emailDomain}`;
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream">
+    <section className="py-20 md:py-24 lg:py-28 bg-cream mb-16 md:mb-20 lg:mb-24">
       <div className="container mx-auto">
         <div className="bg-white rounded-[30px] p-10 lg:p-16 xl:p-20 text-center shadow-sm max-w-[1200px] mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-10 tracking-tight">
@@ -63,7 +63,7 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
             <h3 className="text-3xl md:text-4xl font-bold mb-12 text-brand-dark tracking-tight">{t.contactUs}</h3>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-10 lg:gap-12 max-w-6xl mx-auto mb-16">
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-14 max-w-6xl mx-auto mb-16">
             {/* Telegram */}
             <div className="flex flex-col items-center group">
               <div 

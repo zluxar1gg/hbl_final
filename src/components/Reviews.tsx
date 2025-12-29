@@ -102,14 +102,14 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
   const prevMobile = () => setMobileIndex((prev) => (prev - 1 + allTestimonials.length) % allTestimonials.length);
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream">
+    <section className="py-20 md:py-24 lg:py-28 bg-cream mb-16 md:mb-20 lg:mb-24">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-16 md:mb-20 text-brand-dark text-center mx-auto tracking-tight max-w-4xl">
           {t.title}
         </h2>
         
         {/* DESKTOP */}
-        <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-16 relative shadow-sm border border-brand-blue/5">
+        <div className="hidden md:block bg-brand-light rounded-[40px] p-16 lg:p-20 xl:p-24 relative shadow-sm border border-brand-blue/5 min-h-[600px]">
           <div className="grid grid-cols-3 gap-8 lg:gap-10">
             {testimonialPages[desktopPage].map((review, idx) => (
               <ReviewCard key={idx} review={review} />
