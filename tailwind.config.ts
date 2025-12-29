@@ -1,4 +1,4 @@
-import type { Config} from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 export default {
   content: [
@@ -12,8 +12,8 @@ export default {
         center: true,
         padding: '1.5rem',
         screens: {
-          xl: '1200px'
-        }
+          xl: '1200px',
+        },
       }
     },
   },
