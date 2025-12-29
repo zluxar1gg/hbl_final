@@ -8,12 +8,21 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        cream: '#f5f5f0',
+        brand: {
+          blue: '#2397d0',
+          light: '#cde4f5',
+          yellow: '#fff176',
+          dark: '#1a1a1a',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-jakarta)', 'sans-serif'],
+      },
       container: {
         center: true,
-        padding: {
-          DEFAULT: '1.5rem',
-          xl: '0',
-        },
+        padding: '1.5rem',
         screens: {
           xl: '1200px',
         },
