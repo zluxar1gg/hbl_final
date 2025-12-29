@@ -8,9 +8,6 @@
   --color-brand-dark: #1a1a1a;
   
   --font-family-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
 }
 
 * {
@@ -21,7 +18,6 @@
 
 html,
 body {
-  width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--color-cream);
