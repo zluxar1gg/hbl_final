@@ -31,10 +31,10 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
 
   return (
     <div className={`bg-white rounded-[30px] flex flex-col items-center text-center shadow-sm transition-all duration-300 ${
-      compact ? 'p-6 h-auto' : 'p-10 lg:p-12 h-full'
+      compact ? 'p-4 h-auto' : 'p-8 lg:p-10 h-full'
     }`}>
       <div className={`rounded-3xl overflow-hidden shadow-md border-4 border-gray-50 flex-shrink-0 relative bg-gray-100 ${
-        compact ? 'w-[80px] h-[80px] mb-3' : 'w-[120px] h-[120px] mb-6'
+        compact ? 'w-[80px] h-[80px] mb-2' : 'w-[120px] h-[120px] mb-4'
       }`}>
           {!isReady && (
             <div className="absolute inset-0 bg-gray-200 animate-pulse z-0" />
@@ -53,15 +53,15 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
               }`}
           />
       </div>
-      <h3 className={`${compact ? 'text-lg' : 'text-xl'} font-bold text-brand-dark leading-tight mb-2`}>{review.name}</h3>
-      <div className={`flex items-center justify-center gap-1 text-brand-blue font-bold text-xs uppercase tracking-wide ${
-        compact ? 'mb-3' : 'mb-6 text-sm'
+      <h3 className={`${compact ? 'text-lg' : 'text-xl'} font-bold text-brand-dark leading-tight`}>{review.name}</h3>
+      <div className={`flex items-center justify-center gap-1 mt-0.5 text-brand-blue font-bold text-xs uppercase tracking-wide ${
+        compact ? 'mb-2' : 'mb-4 text-sm'
       }`}>
           <MapPin size={compact ? 12 : 14} className="fill-current" />
           {review.location}
       </div>
       <p className={`text-gray-600 leading-relaxed font-medium ${
-        compact ? 'text-sm mb-3' : 'text-[15px] mb-8 flex-grow'
+        compact ? 'text-sm mb-2' : 'text-[15px] mb-6 flex-grow'
       }`}>"{review.text}"</p>
       <div className={`${compact ? 'text-base' : 'text-xl'} text-yellow-400 tracking-widest ${compact ? 'mt-0' : 'mt-auto'}`}>★★★★★</div>
     </div>
@@ -102,20 +102,20 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
   const prevMobile = () => setMobileIndex((prev) => (prev - 1 + allTestimonials.length) % allTestimonials.length);
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-16 md:mb-20 text-brand-dark text-center mx-auto tracking-tight max-w-4xl">
+    <section className="pb-16 md:pb-24 pt-20 md:pt-24 bg-cream">
+      <div className="container mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-16 md:mb-24 text-brand-dark text-center mx-auto tracking-tight max-w-4xl">
           {t.title}
         </h2>
         
         {/* DESKTOP */}
         <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-16 relative shadow-sm border border-brand-blue/5">
-          <div className="grid grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-3 gap-6 lg:gap-8">
             {testimonialPages[desktopPage].map((review, idx) => (
               <ReviewCard key={idx} review={review} />
             ))}
           </div>
-          <div className="flex justify-center gap-6 mt-14">
+          <div className="flex justify-center gap-6 mt-12">
             <button 
               onClick={prevDesktop} 
               aria-label="Previous reviews"

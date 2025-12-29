@@ -42,10 +42,10 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
   const getExpertLabel = () => language === 'en' ? 'Expert Advice' : 'Экспертные советы';
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-brand-light/30">
+    <section className="py-24 bg-brand-light/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-6 tracking-tight">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-4 tracking-tight">
             {t.title}
           </h2>
           <p className="text-gray-600 font-bold max-w-2xl mx-auto text-lg">
@@ -53,18 +53,18 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {t.cards.map((card: any) => (
             <div 
               key={card.id}
               onClick={() => setActiveGuide(card)}
-              className="bg-white p-10 lg:p-12 rounded-[45px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
+              className="bg-white p-10 rounded-[45px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
             >
-              <h3 className={`text-4xl font-black mb-6 leading-tight tracking-tighter ${getBrandTextStyle(card.id)}`}>
+              <h3 className={`text-4xl font-black mb-4 leading-tight tracking-tighter ${getBrandTextStyle(card.id)}`}>
                 {card.title}
               </h3>
               <p className="text-gray-500 font-bold mb-10 flex-grow text-lg leading-relaxed">{card.desc}</p>
-              <div className="flex items-center gap-2 text-brand-blue font-black uppercase text-[11px] tracking-[0.2em] pt-6 border-t border-gray-50">
+              <div className="flex items-center gap-2 text-brand-blue font-black uppercase text-[11px] tracking-[0.2em] pt-4 border-t border-gray-50">
                 {getExpertLabel()} <ArrowRight size={16} />
               </div>
             </div>

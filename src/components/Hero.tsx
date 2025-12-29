@@ -81,14 +81,14 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
   ];
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-start lg:items-center text-left lg:text-center mb-12 lg:mb-20">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight md:leading-[1.1] mb-8 text-brand-dark lg:max-w-6xl tracking-tight">
+    <section className="py-16 bg-cream">
+      <div className="container mx-auto">
+        <div className="flex flex-col items-start lg:items-center text-left lg:text-center mb-10 lg:mb-16">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight md:leading-[1.1] mb-6 text-brand-dark lg:max-w-6xl tracking-tight">
                 {t.title}
             </h1>
             
-            <div className="bg-brand-yellow px-6 py-3 rounded-2xl shadow-sm border border-brand-yellow/30 animate-fade-in flex items-center gap-2.5">
+            <div className="bg-brand-yellow px-5 py-2.5 rounded-2xl shadow-sm border border-brand-yellow/30 animate-fade-in flex items-center gap-2">
                 <span className="flex h-3 w-3 relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-blue"></span>
@@ -99,9 +99,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
             </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col">
-            <div className="lg:hidden mb-16 flex justify-center">
+            <div className="lg:hidden mb-12 flex justify-center">
                 <img 
                   src="https://i.ibb.co/cS2GvWht/happyboxtop.webp" 
                   alt="Happy Box Services Mascot" 
@@ -117,9 +117,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
                 />
             </div>
 
-            <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:gap-x-8 lg:gap-x-10 mb-16">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-8 md:gap-x-6 mb-12">
               {features.map((feature, idx) => (
-                <div key={idx} className="flex gap-4 items-start">
+                <div key={idx} className="flex gap-3 items-start">
                   <div className="flex-shrink-0 pt-1">
                     <feature.icon size={40} strokeWidth={1.5} className="text-brand-blue w-10 h-10" />
                   </div>
@@ -130,8 +130,8 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
               ))}
             </div>
 
-            <div className="bg-brand-yellow rounded-[25px] px-10 py-7 inline-block self-start shadow-sm">
-              <div className="text-3xl md:text-4xl font-black text-brand-dark mb-2 tracking-tight">86200+</div>
+            <div className="bg-brand-yellow rounded-[25px] px-8 py-6 inline-block self-start shadow-sm">
+              <div className="text-3xl md:text-4xl font-black text-brand-dark mb-1 tracking-tight">86200+</div>
               <p className="font-bold text-brand-dark text-sm md:text-base">{t.stats}</p>
             </div>
           </div>

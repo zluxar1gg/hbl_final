@@ -25,16 +25,16 @@ export const Tracking: React.FC<TrackingProps> = ({ language }) => {
   };
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-14 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-8 tracking-tight">{t.title}</h2>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+    <section className="pt-20 pb-0 bg-cream">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 tracking-tight">{t.title}</h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
             {t.subtitle} <span className="font-bold text-brand-blue">{t.carriers}</span> {t.subtitle2}
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-5 mb-12">
+        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 mb-10 px-4 sm:px-0">
           <div className="relative flex-1">
             <label htmlFor="track-number" className="sr-only">{t.placeholder}</label>
             <PackageSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" size={24} />

@@ -17,9 +17,9 @@ export const About: React.FC<AboutProps> = ({ language }) => {
   };
 
   return (
-    <section className="py-24 md:py-28 lg:py-32 bg-cream">
+    <section className="py-20 bg-cream">
       <div className="container mx-auto px-6 xl:px-0">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Column */}
             <div className="flex justify-center lg:justify-end order-last lg:order-first">
                 <img 
@@ -38,7 +38,7 @@ export const About: React.FC<AboutProps> = ({ language }) => {
 
             {/* Text Column */}
             <div className="text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-10 leading-tight tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tight">
                     {t.title}
                 </h2>
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
