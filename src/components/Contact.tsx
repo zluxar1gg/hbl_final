@@ -49,7 +49,7 @@ export const Contact: React.FC<ContactProps> = ({ language }) => {
 
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="bg-white rounded-[30px] p-10 lg:p-16 xl:p-20 text-center shadow-sm max-w-[1200px] mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-10 tracking-tight">
             {t.title} <span className="text-brand-blue">HappyBox</span>!

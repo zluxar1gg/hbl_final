@@ -43,7 +43,7 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
 
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-brand-light/30">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-6 tracking-tight">
             {t.title}

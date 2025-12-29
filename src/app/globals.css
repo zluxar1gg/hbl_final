@@ -10,6 +10,10 @@
   --font-family-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   
   --breakpoint-xl: 1200px;
+  
+  /* Container configuration */
+  --container-padding: 1.5rem;
+  --container-max-width: 1200px;
 }
 
 * {
@@ -30,6 +34,16 @@ body {
   font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure container is properly centered and contained */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  max-width: var(--container-max-width);
 }
 
 a {

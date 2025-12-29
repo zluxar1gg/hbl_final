@@ -103,7 +103,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
 
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-16 md:mb-20 text-brand-dark text-center mx-auto tracking-tight max-w-4xl">
           {t.title}
         </h2>

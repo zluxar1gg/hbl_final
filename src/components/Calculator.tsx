@@ -123,7 +123,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
 
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-brand-light/20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="bg-white rounded-[40px] p-10 lg:p-16 xl:p-20 max-w-[1150px] mx-auto shadow-sm border border-gray-100">
           <div className="mb-14 lg:mb-16 text-center lg:text-left">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-brand-blue mb-6 tracking-tighter">{t.title}</h2>

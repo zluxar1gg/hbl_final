@@ -26,7 +26,7 @@ export const Tracking: React.FC<TrackingProps> = ({ language }) => {
 
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-cream">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-14 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-8 tracking-tight">{t.title}</h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">

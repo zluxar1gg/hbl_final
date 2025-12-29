@@ -13,7 +13,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
 
   return (
     <section className="py-6 pb-10 bg-cream">
-      <div className="container mx-auto px-6 space-y-8">
+      <div className="container mx-auto space-y-8">
         
         {/* Services Block */}
         <div className="bg-white rounded-[30px] shadow-sm overflow-hidden transition-all duration-300">

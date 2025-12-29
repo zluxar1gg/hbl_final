@@ -13,7 +13,7 @@ export const SeoBlock: React.FC<SeoBlockProps> = ({ language }) => {
 
   return (
     <section className="bg-cream border-t border-brand-blue/10 py-10 md:py-12">
-      <div className="container mx-auto px-6 xl:px-0">
+      <div className="container mx-auto">
         <button 
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}

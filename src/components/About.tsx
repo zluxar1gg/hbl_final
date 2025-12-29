@@ -18,7 +18,7 @@ export const About: React.FC<AboutProps> = ({ language }) => {
 
   return (
     <section className="py-24 md:py-28 lg:py-32 bg-cream">
-      <div className="container mx-auto px-6 xl:px-0">
+      <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Image Column */}
             <div className="flex justify-center lg:justify-end order-last lg:order-first">
