@@ -1,16 +1,20 @@
+'use client';
+
 import React, { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X, User } from 'lucide-react';
 import { Language, translations } from '../utils/translations';
 
 interface HeaderProps {
   language: Language;
-  setLanguage: (lang: Language) => void;
   onLoginClick: () => void;
   isDashboard?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ language, setLanguage, onLoginClick, isDashboard }) => {
+export const Header: React.FC<HeaderProps> = ({ language, onLoginClick, isDashboard }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
   const t = translations[language].nav;
 
   const navItems = [
@@ -38,9 +42,21 @@ export const Header: React.FC<HeaderProps> = ({ language, setLanguage, onLoginCl
     }
   };
 
-  const scrollToTop = () => { window.location.reload(); };
+  const scrollToTop = () => { 
+    if (language === 'en') {
+      router.push('/');
+    } else {
+      router.push('/ru');
+    }
+  };
 
-  const toggleLanguage = () => { setLanguage(language === 'en' ? 'ru' : 'en'); };
+  const toggleLanguage = () => { 
+    if (language === 'en') {
+      router.push('/ru');
+    } else {
+      router.push('/');
+    }
+  };
 
   return (
     <header className="py-5 bg-cream fixed top-0 left-0 w-full z-50 transition-all shadow-sm border-b border-gray-100/50 backdrop-blur-md bg-cream/90">

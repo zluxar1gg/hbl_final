@@ -1,27 +1,26 @@
+'use client';
 
-import React, { useState, Suspense, useEffect } from 'react';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Reviews } from './components/Reviews';
-import { Calculator } from './components/Calculator';
-import { DeliveryPath } from './components/DeliveryPath';
-import { ShoppingGuides } from './components/ShoppingGuides';
-import { Tracking } from './components/Tracking';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { SeoBlock } from './components/SeoBlock';
-import { Analytics } from './components/Analytics';
-import { FloatingContact } from './components/FloatingContact';
-import { Language, translations } from './utils/translations';
+import React, { useState, useEffect } from 'react';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { About } from '@/components/About';
+import { Services } from '@/components/Services';
+import { Reviews } from '@/components/Reviews';
+import { Calculator } from '@/components/Calculator';
+import { DeliveryPath } from '@/components/DeliveryPath';
+import { ShoppingGuides } from '@/components/ShoppingGuides';
+import { Tracking } from '@/components/Tracking';
+import { Contact } from '@/components/Contact';
+import { Footer } from '@/components/Footer';
+import { SeoBlock } from '@/components/SeoBlock';
+import { Analytics } from '@/components/Analytics';
+import { FloatingContact } from '@/components/FloatingContact';
+import { Quiz } from '@/components/Quiz';
+import { Language, translations } from '@/utils/translations';
 import { Loader2, X, Hammer } from 'lucide-react';
 
-// Lazy load components
-const Quiz = React.lazy(() => import('./components/Quiz').then(module => ({ default: module.Quiz })));
-
-const App: React.FC = () => {
-  const [language, setLanguage] = useState<Language>('en');
+export default function HomePage() {
+  const [language] = useState<Language>('en');
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isDevModalOpen, setIsDevModalOpen] = useState(false);
   const t = translations[language].devModal;
@@ -41,7 +40,6 @@ const App: React.FC = () => {
       <Analytics />
       <Header 
         language={language} 
-        setLanguage={setLanguage} 
         onLoginClick={() => setIsDevModalOpen(true)}
         isDashboard={false}
       />
@@ -63,23 +61,13 @@ const App: React.FC = () => {
           <Calculator language={language} onOpenQuiz={() => setIsQuizOpen(true)} />
         </div>
         
-        <Suspense fallback={
-          isQuizOpen ? (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/20 backdrop-blur-sm">
-              <div className="bg-white p-4 rounded-full shadow-lg">
-                 <Loader2 className="animate-spin text-brand-blue" size={32} />
-              </div>
-            </div>
-          ) : null
-        }>
-          {isQuizOpen && (
-            <Quiz 
-              language={language} 
-              isOpen={isQuizOpen} 
-              onClose={() => setIsQuizOpen(false)} 
-            />
-          )}
-        </Suspense>
+        {isQuizOpen && (
+          <Quiz 
+            language={language} 
+            isOpen={isQuizOpen} 
+            onClose={() => setIsQuizOpen(false)} 
+          />
+        )}
 
         <div id="tracking" className="scroll-mt-28">
           <Tracking language={language} />
@@ -135,6 +123,4 @@ const App: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default App;
+}
