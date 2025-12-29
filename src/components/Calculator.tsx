@@ -122,17 +122,17 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
   };
 
   return (
-    <section className="py-20 bg-brand-light/20">
-      <div className="container mx-auto">
-        <div className="bg-white rounded-[40px] p-8 lg:p-16 max-w-[1150px] mx-auto shadow-sm border border-gray-100">
-          <div className="mb-12 text-center lg:text-left">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-brand-blue mb-4 tracking-tighter">{t.title}</h2>
+    <section className="py-20 md:py-24 lg:py-28 bg-brand-light/20">
+      <div className="container mx-auto px-6">
+        <div className="bg-white rounded-[40px] p-10 lg:p-16 xl:p-20 max-w-[1150px] mx-auto shadow-sm border border-gray-100">
+          <div className="mb-14 lg:mb-16 text-center lg:text-left">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-brand-blue mb-6 tracking-tighter">{t.title}</h2>
             <p className="text-lg md:text-xl text-gray-500 font-bold max-w-3xl">{t.subtitle}</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
             {/* Left Column: Form & Quiz Inline CTA */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-7">
               <div className="flex bg-gray-50 p-1.5 rounded-2xl border border-gray-100">
                 <button onClick={() => setMethod('air')} className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-black text-sm transition-all ${method === 'air' ? 'bg-white text-brand-blue shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}>
                   <Plane size={18} /> {t.methodAir}
@@ -145,7 +145,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                 </button>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-5">
                 <div className="relative">
                   <input 
                     type="number" 
@@ -154,7 +154,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                     placeholder={t.weightPlaceholder} 
                     className={`w-full p-4 border-2 border-gray-100 rounded-2xl text-lg font-bold outline-none bg-gray-50/50 text-brand-dark transition-all focus:border-brand-blue ${error && !weight ? 'border-red-200' : ''}`} 
                   />
-                  <p className="text-[10px] text-gray-400 font-black ml-3 mt-1 uppercase tracking-widest">{t.minWeightHint}</p>
+                  <p className="text-[10px] text-gray-400 font-black ml-3 mt-2 uppercase tracking-widest">{t.minWeightHint}</p>
                 </div>
                 <select value={unit} onChange={(e) => setUnit(e.target.value)} className="p-4 border-2 border-gray-100 rounded-2xl font-black outline-none bg-gray-50/50 h-[60px] cursor-pointer focus:border-brand-blue transition-all">
                   <option value="kg">{t.kg}</option>
@@ -176,7 +176,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ language, onOpenQuiz }) 
                 </div>
               </div>
 
-              <div className="space-y-6 pt-2">
+              <div className="space-y-6 pt-3">
                 <button 
                   onClick={handleCalculate} 
                   className="w-full bg-brand-blue text-white font-black text-xl p-5 rounded-[25px] transition-all shadow-xl shadow-blue-100 hover:bg-blue-600 active:scale-[0.98] flex items-center justify-center gap-3"
