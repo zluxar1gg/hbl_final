@@ -12,13 +12,13 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
   const t = translations[language].services;
 
   return (
-    <section className="py-16 md:py-20 bg-cream">
-      <div className="container mx-auto space-y-12">
+    <section className="py-10 md:py-14 bg-cream">
+      <div className="container mx-auto space-y-8">
         
         {/* Services Block */}
         <div className="bg-white rounded-[30px] shadow-sm overflow-hidden transition-all duration-300">
           <button 
-            className="w-full p-12 lg:p-14 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors select-none text-left"
+            className="w-full p-8 lg:p-10 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors select-none text-left"
             onClick={() => setIsServicesOpen(!isServicesOpen)}
             aria-expanded={isServicesOpen}
           >
@@ -51,7 +51,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
         {/* Amazon Logistics Block */}
         <div className="bg-white rounded-[30px] shadow-sm overflow-hidden transition-all duration-300">
           <button 
-            className="w-full p-12 lg:p-14 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors select-none text-left"
+            className="w-full p-8 lg:p-10 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors select-none text-left"
             onClick={() => setIsAmazonOpen(!isAmazonOpen)}
             aria-expanded={isAmazonOpen}
           >
