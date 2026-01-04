@@ -59,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onLoginClick, isDashbo
   };
 
   return (
-    <header className="py-6 bg-cream fixed top-0 left-0 w-full z-50 transition-all shadow-sm border-b border-gray-100/50 backdrop-blur-md bg-cream/90">
+    <header className="py-5 bg-cream fixed top-0 left-0 w-full z-50 transition-all shadow-sm border-b border-gray-100/50 backdrop-blur-md bg-cream/90">
       <div className="container mx-auto flex justify-between items-center px-4 xl:px-0">
         <div 
           onClick={scrollToTop}
