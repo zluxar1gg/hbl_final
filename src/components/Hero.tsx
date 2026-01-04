@@ -81,7 +81,7 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
   ];
 
   return (
-    <section className="pt-80 pb-80 bg-cream">
+    <section className="pt-40 pb-20 md:pb-24 lg:pb-28 bg-cream">
       <div className="container mx-auto">
         <div className="flex flex-col items-start lg:items-center text-left lg:text-center mb-12 lg:mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight md:leading-[1.1] mb-8 text-brand-dark lg:max-w-6xl tracking-tight">
