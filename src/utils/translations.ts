@@ -11,7 +11,7 @@ export const translations = {
       contacts: 'Contacts'
     },
     hero: {
-      title: 'Fast, Affordable, and Trustworthy Shipping from China & Hong Kong',
+      title: 'Fast & Reliable Shipping from China to USA, UAE, Europe & Worldwide.',
       minWeightBadge: 'No minimum weight requirements — shipping from 0.1 kg',
       features: {
         operating: 'Operating since 2016',
@@ -391,7 +391,7 @@ export const translations = {
       contacts: 'Контакты'
     },
     hero: {
-      title: 'Быстрая, доступная и надежная доставка из Китая и Гонконга',
+      title: 'Быстрая и надежная доставка из Китая в США, ОАЭ, Европу и по всему миру.',
       minWeightBadge: 'Никаких ограничений по минимальному весу — доставка от 0.1 кг',
       features: {
         operating: 'Работаем с 2016 года',
