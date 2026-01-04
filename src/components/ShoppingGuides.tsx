@@ -58,7 +58,7 @@ export const ShoppingGuides: React.FC<{ language: Language }> = ({ language }) =
             <div 
               key={card.id}
               onClick={() => setActiveGuide(card)}
-              className="bg-white p-10 lg:p-12 rounded-[45px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
+              className="bg-white p-8 lg:p-10 rounded-[45px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer group flex flex-col h-full border border-transparent hover:border-brand-blue/10"
             >
               <h3 className={`text-4xl font-black mb-6 leading-tight tracking-tighter ${getBrandTextStyle(card.id)}`}>
                 {card.title}

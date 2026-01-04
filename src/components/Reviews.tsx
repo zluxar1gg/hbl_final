@@ -31,7 +31,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, compact }) => {
 
   return (
     <div className={`bg-white rounded-[30px] flex flex-col items-center text-center shadow-sm transition-all duration-300 ${
-      compact ? 'p-6 h-auto' : 'p-10 lg:p-12 h-full'
+      compact ? 'p-6 h-auto' : 'p-8 lg:p-10 h-full'
     }`}>
       <div className={`rounded-3xl overflow-hidden shadow-md border-4 border-gray-50 flex-shrink-0 relative bg-gray-100 ${
         compact ? 'w-[80px] h-[80px] mb-3' : 'w-[120px] h-[120px] mb-6'
@@ -109,7 +109,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ language }) => {
         </h2>
         
         {/* DESKTOP */}
-        <div className="hidden md:block bg-brand-light rounded-[40px] p-16 lg:p-20 xl:p-24 relative shadow-sm border border-brand-blue/5 min-h-[600px]">
+        <div className="hidden md:block bg-brand-light rounded-[40px] p-12 lg:p-14 xl:p-16 relative shadow-sm border border-brand-blue/5 min-h-[600px]">
           <div className="grid grid-cols-3 gap-8 lg:gap-10">
             {testimonialPages[desktopPage].map((review, idx) => (
               <ReviewCard key={idx} review={review} />
