@@ -12,8 +12,8 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
   const t = translations[language].services;
 
   return (
-    <section className="py-16 md:py-20 bg-cream">
-      <div className="container mx-auto space-y-12">
+    <section className="py-80 bg-cream">
+      <div className="container mx-auto space-y-80">
         
         {/* Services Block */}
         <div className="bg-white rounded-[30px] shadow-sm overflow-hidden transition-all duration-300">
