@@ -12,7 +12,7 @@ export const Services: React.FC<ServicesProps> = ({ language }) => {
   const t = translations[language].services;
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-cream">
+    <section className="py-16 md:py-20 bg-cream">
       <div className="container mx-auto space-y-12">
         
         {/* Services Block */}
